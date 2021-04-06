@@ -264,6 +264,13 @@ shortCircuit:
   hostPath: "/tmp/alluxio-domain" # The hostPath directory to use
 
 
+# add pod.spec.hostAliases in master and worker pods
+# hostAliases:
+  # - ip: "1.2.3.4"
+  #   hostnames:
+  #     - "my.host.com"
+
+
 ## FUSE ##
 
 fuse:

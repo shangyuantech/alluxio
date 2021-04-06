@@ -61,6 +61,16 @@ spec:
     spec:
       hostNetwork: {{ $hostNetwork }}
       dnsPolicy: {{ .Values.master.dnsPolicy | default ($hostNetwork | ternary "ClusterFirstWithHostNet" "ClusterFirst") }}
+      {{ if .Values.hostAliases }}
+      hostAliases:
+        {{- range .Values.hostAliases }}
+        - ip: {{ .ip }}
+          hostnames:
+            {{- range .hostnames }}
+            - {{ . }}
+              {{- end }}
+              {{- end }}
+      {{ end }}
       nodeSelector:
       {{- if .Values.master.nodeSelector }}
 {{ toYaml .Values.master.nodeSelector | trim | indent 8  }}

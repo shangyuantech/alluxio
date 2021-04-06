@@ -102,6 +102,7 @@ __Common Values:__
 | `jvmOptions` | Recommended JVM Heap options for running in Docker. These JVM options are common to all Alluxio services | `[]` |
 | `mounts` | Mount Persistent Volumes to all components | `[]` |
 | `nodeSelector` | Use labels to run Alluxio on a subset of the K8s nodes | `{}` |
+| `hostAliases` | Add hostAliases in master and worker pods | `[]` |
 
 __Master values:__
 
